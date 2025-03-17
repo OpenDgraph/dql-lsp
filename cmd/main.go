@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/tliron/commonlog"
 	"github.com/tliron/glsp"
@@ -21,13 +23,21 @@ var (
 )
 
 func init() {
-	// Setup file logging
-	logFile, err := os.OpenFile("./testing/dql-lsp.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	if err != nil {
-		log.Fatal("Failed to open log file:", err)
-	}
+	isDebug := strings.ToLower(os.Getenv("DEBUG")) == "true"
+	log.Println("[DEBUG]", isDebug)
 
-	log.SetOutput(logFile)
+	// Setup file logging
+	if isDebug {
+		logFile, err := os.OpenFile("./testing/dql-lsp.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		if err != nil {
+			log.Fatal("Failed to open log file:", err)
+		}
+
+		log.SetOutput(logFile)
+	} else {
+		log.Println("[Init] Logging only to stdout")
+		log.SetOutput(io.Discard)
+	}
 }
 
 func main() {

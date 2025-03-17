@@ -27,7 +27,7 @@
         "${workspaceFolder}/testing"
 			],
       "env": {
-          "DEBUG": "true"
+          "DEBUG": "true",
         },
 			"outFiles": [
                 "${workspaceFolder}/extension/dist/**/*.js"
