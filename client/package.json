@@ -7,22 +7,21 @@
     "engines": {
         "vscode": "^1.50.0"
     },
-    "activationEvents": [
-        "onLanguage:graphql"
-    ],
     "main": "./client.js",
     "contributes": {
         "languages": [
             {
-                "id": "graphql",
-                "extensions": [
-                    ".graphql"
-                ],
-                "aliases": [
-                    "GraphQL",
-                    "graphql"
-                ]
-            }
+                "id": "dql",
+                "aliases": ["DQL"],
+                "extensions": [".dql"],
+                "configuration": "./language-configuration.json"
+              },
+              {
+                "id": "schema",
+                "aliases": ["Schema"],
+                "extensions": [".schema"],
+                "configuration": "./language-configuration.json"
+              }
         ]
     },
     "dependencies": {

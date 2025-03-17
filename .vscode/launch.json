@@ -1,6 +1,19 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+        {
+            "name": "Run DQL LSP (Go)",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/main.go",
+            "env": {
+              "DEBUG": "true"
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+          },
 		{
 			"name": "Launch Extension",
 			"type": "extensionHost",
@@ -10,6 +23,9 @@
 				"--extensionDevelopmentPath=${workspaceFolder}/client",
 				"--disable-extensions"
 			],
+            "env": {
+                "DEBUG": "true"
+              },
 			"outFiles": [
                 "${workspaceFolder}/extension/dist/**/*.js"
             ],
