@@ -1,0 +1,33 @@
+{
+    "scopeName": "source.dql",
+    "patterns": [
+      {
+        "name": "keyword.control.dql",
+        "match": "\\b(query|mutation|type|schema|fragment|on)\\b"
+      },
+      {
+        "name": "string.quoted.double.dql",
+        "begin": "\"",
+        "end": "\""
+      },
+      {
+        "name": "variable.name.dql",
+        "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+      },
+      {
+        "name": "constant.numeric.dql",
+        "match": "\\b\\d+(\\.\\d+)?\\b"
+      },
+      {
+        "name": "punctuation.brackets.dql",
+        "match": "[{}()\\[\\]]"
+      },
+      {
+        "name": "comment.line.double-slash.dql",
+        "match": "#.*$"
+      }
+    ],
+    "repository": {},
+    "uuid": "00000000-0000-0000-0000-000000000000"
+  }
+  
