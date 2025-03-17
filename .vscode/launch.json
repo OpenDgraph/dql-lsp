@@ -19,13 +19,16 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
+      "debugWebWorkerHost": false,
+      // "trace": {"logFile": "${workspaceFolder}/testing/log.txt"},
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}/client",
-				"--disable-extensions"
+				"--disable-extensions",
+        "${workspaceFolder}/testing"
 			],
-            "env": {
-                "DEBUG": "true"
-              },
+      "env": {
+          "DEBUG": "true"
+        },
 			"outFiles": [
                 "${workspaceFolder}/extension/dist/**/*.js"
             ],
