@@ -1,0 +1,36 @@
+{
+    "name": "dql-lsp-client",
+    "displayName": "GraphQL LSP Client",
+    "description": "Client to connect GraphQL LSP server",
+    "version": "0.0.1",
+    "publisher": "micheldiz",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "activationEvents": [
+        "onLanguage:graphql"
+    ],
+    "main": "./client.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "graphql",
+                "extensions": [
+                    ".graphql"
+                ],
+                "aliases": [
+                    "GraphQL",
+                    "graphql"
+                ]
+            }
+        ]
+    },
+    "dependencies": {
+        "esbuild": "^0.25.1",
+        "vscode-languageclient": "^8.0.0"
+    },
+    "scripts": {
+        "bundle": "esbuild ./client.js  --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
+        "compile": "npm run bundle"
+    }
+}
