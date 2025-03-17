@@ -3,7 +3,7 @@
     "id": 3,
     "method": "textDocument/completion",
     "params": {
-      "textDocument": { "uri": "file:///test.graphql" },
+      "textDocument": { "uri": "file:///test.dql" },
       "position": { "line": 0, "character": 3 }
     }
   }
